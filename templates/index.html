@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dementia Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Dementia Detection System</h1>
+        <form action="/predict" method="POST">
+            <h3>Enter patient information:</h3>
+            
+            <!-- Numeric inputs -->
+            <label>Age: <input type="number" name="Age" min="0" required></label><br>
+            <label>Gender (0=Female, 1=Male): <input type="number" name="Gender" min="0" max="1" required></label><br>
+            <label>BMI: <input type="number" step="0.1" name="BMI" required></label><br>
+            <label>Systolic BP: <input type="number" name="SystolicBP" required></label><br>
+            <label>Diastolic BP: <input type="number" name="DiastolicBP" required></label><br>
+            <label>Cholesterol Total: <input type="number" name="CholesterolTotal" required></label><br>
+            <label>Cholesterol LDL: <input type="number" name="CholesterolLDL" required></label><br>
+            <label>Cholesterol HDL: <input type="number" name="CholesterolHDL" required></label><br>
+            <label>Triglycerides: <input type="number" name="CholesterolTriglycerides" required></label><br>
+            <label>MMSE Score: <input type="number" name="MMSE" min="0" max="30" required></label><br>
+
+            <!-- Yes/No or 0/1 inputs -->
+            <h3>Other Features (0=No, 1=Yes):</h3>
+            <label>Smoking: <input type="number" name="Smoking" min="0" max="1" required></label><br>
+            <label>Alcohol Consumption: <input type="number" name="AlcoholConsumption" min="0" max="1" required></label><br>
+            <label>Physical Activity: <input type="number" name="PhysicalActivity" min="0" max="1" required></label><br>
+            <label>Diet Quality: <input type="number" name="DietQuality" min="0" max="1" required></label><br>
+            <label>Sleep Quality: <input type="number" name="SleepQuality" min="0" max="1" required></label><br>
+            <label>Family History of Alzheimer's: <input type="number" name="FamilyHistoryAlzheimers" min="0" max="1" required></label><br>
+            <label>Cardiovascular Disease: <input type="number" name="CardiovascularDisease" min="0" max="1" required></label><br>
+            <label>Diabetes: <input type="number" name="Diabetes" min="0" max="1" required></label><br>
+            <label>Depression: <input type="number" name="Depression" min="0" max="1" required></label><br>
+            <label>Head Injury: <input type="number" name="HeadInjury" min="0" max="1" required></label><br>
+            <label>Hypertension: <input type="number" name="Hypertension" min="0" max="1" required></label><br>
+            <label>Functional Assessment: <input type="number" name="FunctionalAssessment" min="0" max="1" required></label><br>
+            <label>Memory Complaints: <input type="number" name="MemoryComplaints" min="0" max="1" required></label><br>
+            <label>Behavioral Problems: <input type="number" name="BehavioralProblems" min="0" max="1" required></label><br>
+            <label>ADL Issues: <input type="number" name="ADL" min="0" max="1" required></label><br>
+            <label>Confusion: <input type="number" name="Confusion" min="0" max="1" required></label><br>
+            <label>Disorientation: <input type="number" name="Disorientation" min="0" max="1" required></label><br>
+            <label>Personality Changes: <input type="number" name="PersonalityChanges" min="0" max="1" required></label><br>
+            <label>Difficulty Completing Tasks: <input type="number" name="DifficultyCompletingTasks" min="0" max="1" required></label><br>
+            <label>Forgetfulness: <input type="number" name="Forgetfulness" min="0" max="1" required></label><br>
+
+            <button type="submit">Predict Dementia</button>
+        </form>
+    </div>
+</body>
+</html>

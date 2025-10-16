@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dementia Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .result-container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 600px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .positive {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .negative {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Dementia Detection Result</h1>
+        {% if result.startswith("🧠") %}
+            <p class="positive">{{ result }}</p>
+        {% else %}
+            <p class="negative">{{ result }}</p>
+        {% endif %}
+        <a href="/">🔄 Check Another Patient</a>
+    </div>
+</body>
+</html>
